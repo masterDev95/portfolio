@@ -1,3 +1,7 @@
+:root {
+    --hero-title-text-color: var(--accent-color);
+}
+
 #accueil {
     display: flex;
     flex-direction: column;
@@ -16,24 +20,34 @@
 }
 
 .hero-text {
+    width: 500px;
     min-width: 500px;
 }
 
 .hero-greeting {
-    font-size: 1.6em;
+    font-size: 2em;
     line-height: 0;
 }
 
 .hero-title {
     text-indent: .4em;
-    font-size: 3em;
+    font-size: 3.5em;
     font-weight: bold;
     transition: opacity 250ms ease-in-out;
     font-family: 'Barlow Condensed', 'Roboto Flex', Helvetica, sans-serif;
+    text-shadow: 5px 5px 6px rgba(0,0,0,0.3);
+    color: var(--hero-title-text-color);
 }
 
 .fade {
     opacity: 0;
+}
+
+.hero-intro {
+    text-align: justify;
+    margin-bottom: 1.5em;
+    line-height: 1.5em;
+    font-size: 1.3em;
 }
 
 .hero-image > img {
@@ -46,4 +60,12 @@
 
 .social-links > a {
     margin: 0 .7em;
+}
+
+.social-links > a:first-child {
+    margin-left: 0;
+}
+
+.social-links > a > img {
+    width: 64px;
 }

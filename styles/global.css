@@ -1,7 +1,9 @@
 :root {
     --bg-color: #fff1ca;
     --text-color: #112a46;
-    --header-height: 80px;
+    --header-height: 90px;
+    --header-bg-color: #FAF7F399;
+    --accent-color: #405c7e;
 }
 
 html {
@@ -21,9 +23,9 @@ header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #FAF7F399;
+    background-color: var(--header-bg-color);
     padding: 0 3%;
-    height: 80px;
+    height: var(--header-height);
     box-shadow: 0px 0px 7px -2px #000000;
 }
 
@@ -39,6 +41,15 @@ main {
 #nav-list > li {
     font-size: 1.2em;
     margin: 0 .8em;
+    padding: .3em 0;
+    border-color: var(--accent-color);
+    transition: color 250ms ease-in-out;
+}
+
+#nav-list > li:hover {
+    color: var(--accent-color);
+    border-bottom-style: solid;
+    border-width: 0 0 2px 0;
 }
 
 a {
