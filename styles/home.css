@@ -1,0 +1,49 @@
+#accueil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.hero-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-content > * {
+    margin: 0 64px;
+}
+
+.hero-text {
+    min-width: 500px;
+}
+
+.hero-greeting {
+    font-size: 1.6em;
+    line-height: 0;
+}
+
+.hero-title {
+    text-indent: .4em;
+    font-size: 3em;
+    font-weight: bold;
+    transition: opacity 250ms ease-in-out;
+    font-family: 'Barlow Condensed', 'Roboto Flex', Helvetica, sans-serif;
+}
+
+.fade {
+    opacity: 0;
+}
+
+.hero-image > img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.social-links > a {
+    margin: 0 .7em;
+}
