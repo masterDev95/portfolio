@@ -37,7 +37,7 @@
     transition-property: opacity, transform;
     transition-duration: 250ms;
     transition-timing-function: var(--title-easing-function);
-    font-family: 'Barlow Condensed', 'Roboto Flex', Helvetica, sans-serif;
+    font-family: 'Barlow Condensed', 'Roboto Flex', Helvetica, Impact, sans-serif;
     text-shadow: var(--accent-color-neon-shadow);
     color: var(--accent-color);
 }

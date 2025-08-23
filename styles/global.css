@@ -3,7 +3,8 @@
     --text-color: #ebd4f8;
     --header-height: 80px;
     --header-bg-color: #0d050d;
-    --header-shadow-color: #f67eff99;
+    --header-neon-color: hsla(296, 100%, 85%, 0.795);
+    --header-neon-shadow: 0px 4px 18px -3px var(--header-neon-color);
     --accent-color: #e97e90;
     --accent-color-neon-color: #ffb3b380;
     --accent-color-neon-shadow: 0px 0px 8px var(--accent-color-neon-color);
@@ -29,7 +30,7 @@ header {
     align-items: center;
     background-color: var(--header-bg-color);
     height: var(--header-height);
-    box-shadow: 0px 0px 10px 0px var(--header-shadow-color);
+    box-shadow: var(--header-neon-shadow);
 }
 
 main {
@@ -46,7 +47,9 @@ main {
     margin: 0 .8em;
     padding: .3em 0;
     border-bottom: 2px solid transparent;
-    transition: all 250ms ease-in-out;
+    transition-property: color, border;
+    transition-duration: 250ms;
+    transition-timing-function: ease-in-out;
 }
 
 #nav-list > li:hover {
