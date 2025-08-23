@@ -1,5 +1,6 @@
 :root {
-    --hero-title-text-color: var(--accent-color);
+    --social-links-icon-size: 36px;
+    --title-easing-function: cubic-bezier(0.45, 0, 0.55, 1);
 }
 
 #accueil {
@@ -33,19 +34,21 @@
     text-indent: .4em;
     font-size: 3.5em;
     font-weight: bold;
-    transition: opacity 250ms ease-in-out;
+    transition-property: opacity, transform;
+    transition-duration: 250ms;
+    transition-timing-function: var(--title-easing-function);
     font-family: 'Barlow Condensed', 'Roboto Flex', Helvetica, sans-serif;
-    text-shadow: 5px 5px 6px rgba(0,0,0,0.3);
-    color: var(--hero-title-text-color);
+    text-shadow: var(--accent-color-neon-shadow);
+    color: var(--accent-color);
 }
 
 .fade {
     opacity: 0;
+    transform: scale(95%);
 }
 
 .hero-intro {
     text-align: justify;
-    margin-bottom: 1.5em;
     line-height: 1.5em;
     font-size: 1.3em;
 }
@@ -58,6 +61,11 @@
     border-radius: 50%;
 }
 
+.social-links {
+    display: flex;
+    align-items: center;
+}
+
 .social-links > a {
     margin: 0 .7em;
 }
@@ -67,5 +75,7 @@
 }
 
 .social-links > a > img {
-    width: 64px;
+    width: var(--social-links-icon-size);
+    color: var(--accent-color);
+    filter: drop-shadow(var(--accent-color-neon-shadow));
 }

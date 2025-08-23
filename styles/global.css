@@ -1,9 +1,13 @@
 :root {
-    --bg-color: #fff1ca;
-    --text-color: #112a46;
-    --header-height: 90px;
-    --header-bg-color: #FAF7F399;
-    --accent-color: #405c7e;
+    --bg-color: #1f0837;
+    --text-color: #ebd4f8;
+    --header-height: 80px;
+    --header-bg-color: #0d050d;
+    --header-shadow-color: #f67eff99;
+    --accent-color: #e97e90;
+    --accent-color-neon-color: #ffb3b380;
+    --accent-color-neon-shadow: 0px 0px 8px var(--accent-color-neon-color);
+    --current-page-shadow: 0px 0px 12px hsl(278, 72%, 99%);
 }
 
 html {
@@ -21,12 +25,11 @@ body {
 
 header {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: var(--header-bg-color);
-    padding: 0 3%;
     height: var(--header-height);
-    box-shadow: 0px 0px 7px -2px #000000;
+    box-shadow: 0px 0px 10px 0px var(--header-shadow-color);
 }
 
 main {
@@ -47,9 +50,14 @@ main {
 }
 
 #nav-list > li:hover {
+    text-shadow: var(--accent-color-neon-shadow);
     color: var(--accent-color);
     border-bottom-style: solid;
     border-width: 0 0 2px 0;
+}
+
+.current-page {
+    text-shadow: var(--current-page-shadow);
 }
 
 a {
