@@ -9,6 +9,8 @@
     --accent-color-neon-color: #ffb3b380;
     --accent-color-neon-shadow: 0px 0px 8px var(--accent-color-neon-color);
     --current-page-shadow: 0px 0px 12px hsl(278, 72%, 99%);
+    --main-padding: 1.25em;
+
 }
 
 html {
@@ -22,6 +24,8 @@ body {
     padding: 0;
     height: 100%;
     font-family: 'Roboto Flex', Helvetica, sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
 header {
@@ -34,7 +38,7 @@ header {
 }
 
 main {
-    height: calc(100% - var(--header-height));
+    padding: var(--main-padding);
 }
 
 #nav-list {
@@ -64,4 +68,18 @@ main {
 
 a {
     text-decoration: none;
+}
+
+@media screen and (max-width: 540px){
+    body {
+        grid-template-rows: initial;
+    }
+
+    header {
+        display: none;
+    }
+
+    main {
+        height: calc(100% - var(--main-padding) * 2);
+    }
 }

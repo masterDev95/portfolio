@@ -1,12 +1,28 @@
 :root {
-    --social-links-icon-size: 36px;
     --title-easing-function: cubic-bezier(0.45, 0, 0.55, 1);
+
+    --mobile-scale-factor: .7;
+    
+    --greeting-font-size: 2em;
+    --mobile-greeting-font-size: calc(var(--greeting-font-size) * var(--mobile-scale-factor));
+    
+    --title-indent: .4em;
+    --title-font-size: 3.5em;
+    --mobile-title-font-size: calc(var(--title-font-size) * var(--mobile-scale-factor));
+
+    --intro-line-height: 1.5em;
+    --intro-font-size: 1.3em;
+    --mobile-intro-font-size: calc(var(--intro-font-size) * var(--mobile-scale-factor));
+    
+    --image-size: 200px;
+    --mobile-image-size: calc(var(--image-size) * var(--mobile-scale-factor));
+    
+    --social-links-icon-size: 36px;
+    --mobile-social-links-icon-size: calc(var(--social-links-icon-size) * var(--mobile-scale-factor));
 }
 
 #accueil {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    display: grid;
     height: 100%;
 }
 
@@ -17,6 +33,7 @@
     flex-wrap: wrap;
     row-gap: 40px;
     column-gap: 64px;
+    margin: auto;
 }
 
 .hero-text {
@@ -25,13 +42,13 @@
 }
 
 .hero-greeting {
-    font-size: 2em;
+    font-size: var(--greeting-font-size);
     line-height: 0;
 }
 
 .hero-title {
-    text-indent: .4em;
-    font-size: 3.5em;
+    text-indent: var(--title-indent);
+    font-size: var(--title-font-size);
     font-weight: bold;
     transition-property: opacity, transform;
     transition-duration: 250ms;
@@ -48,13 +65,12 @@
 
 .hero-intro {
     text-align: justify;
-    line-height: 1.5em;
-    font-size: 1.3em;
+    line-height: var(--intro-line-height);
+    font-size: var(--intro-font-size);
 }
 
 .hero-image > img {
-    width: 200px;
-    height: 200px;
+    width: var(--image-size);
     object-fit: cover;
     object-position: center;
     border-radius: 50%;
@@ -78,3 +94,31 @@
     color: var(--accent-color);
     filter: drop-shadow(var(--accent-color-neon-shadow));
 }
+
+@media screen and (max-width: 540px) {
+    .hero-image > img {
+        width: var(--mobile-image-size);
+    }
+
+    .hero-text {
+        width: 100%;
+        min-width: initial;
+    }
+
+    .hero-greeting {
+        font-size: var(--mobile-greeting-font-size);
+    }
+
+    .hero-title {
+        font-size: var(--mobile-title-font-size);
+    }
+
+    .hero-intro {
+        font-size: var(--mobile-intro-font-size);
+    }
+
+    .social-links > a > img {
+        width: var(--mobile-social-links-icon-size);
+    }
+}
+
